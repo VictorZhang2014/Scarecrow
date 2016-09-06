@@ -86,6 +86,12 @@ NSString* const kDefaultPlaceHolder = @"Not Set";
     }];
     
     self.avatarHeaderViewModel.reposCommand = [[RACCommand alloc]initWithSignalBlock:^RACSignal *(id input) {
+        @strongify(self);
+        ADReposViewModel *viewModel = [[ADReposViewModel alloc]initWithParam:@{@"user" : self.user}];
+        
+        ADViewController *vc = [[ADPlatformManager sharedInstance]viewControllerWithViewModel:viewModel];
+        [self.ownerVC.navigationController pushViewController:vc animated:YES];
+        
         return [RACSignal empty];
     }];
     

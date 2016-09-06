@@ -14,4 +14,7 @@
 @property (assign, nonatomic, readonly) BOOL isCurrentUser;
 @property (strong, nonatomic, readonly) NSArray<OCTRepository *> *reposArray;
 
+- (void)updateRepos:(NSArray *)repos;
+- (RACSignal *)dataSourceSignalWithRopse:(NSArray *)reposArray;
+
 @end
