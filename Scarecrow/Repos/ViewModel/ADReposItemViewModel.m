@@ -8,10 +8,13 @@
 
 #import "ADReposItemViewModel.h"
 #import <FormatterKit/TTTTimeIntervalFormatter.h>
+#import "UIColor+Scarecrow.h"
 
 @interface ADReposItemViewModel ()
 
 @property (strong, nonatomic) OCTRepository *repos;
+
+@property (assign, nonatomic) ADReposOption options;
 
 @property (copy, nonatomic) NSAttributedString *name;
 @property (copy, nonatomic) NSAttributedString *reposDescription;
@@ -24,10 +27,11 @@
 
 @implementation ADReposItemViewModel
 
-- (instancetype)initWithRepos:(OCTRepository *)repos {
+- (instancetype)initWithRepos:(OCTRepository *)repos options:(ADReposOption)options {
     self = [super init];
     if (self) {
         self.repos = repos;
+        self.options = options;
                 
         self.language = repos.language ?: @"";
         CGFloat height = 0;
@@ -50,7 +54,17 @@
 
 - (NSAttributedString *)name {
     if (!_name) {
-        _name = [[NSAttributedString alloc]initWithString:self.repos.name];
+        if (self.options & ADReposOptionShowOwnerLogin) {
+            NSString *uniName = [NSString stringWithFormat:@"%@/%@", self.repos.ownerLogin, self.repos.name];
+            
+            NSMutableAttributedString *attributedString = [[NSMutableAttributedString alloc]initWithString:uniName];
+            [attributedString addAttribute:NSForegroundColorAttributeName value:DEFAULT_RGB range:NSMakeRange(0, uniName.length)];
+            [attributedString addAttribute:NSForegroundColorAttributeName value:RGB(0x333333) range:[uniName rangeOfString:self.repos.ownerLogin]];
+            
+            _name = attributedString;
+        } else {
+            _name = [[NSAttributedString alloc]initWithString:self.repos.name];
+        }
     }
     return _name;
 }

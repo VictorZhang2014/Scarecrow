@@ -31,8 +31,12 @@
     return YES;
 }
 
-+ (NSArray<__kindof OCTRepository*> *)ad_fetchRepos {
++ (NSArray *)ad_fetchRepos {
     return [[self database]fetchRepos];
+}
+
++ (NSArray *)ad_fetchPublicReposWithPage:(int)page pageStep:(int)pageStep {
+    return [[self database]fetchPublicReposWithPage:page pageStep:pageStep];
 }
 
 - (void)setStarStatus:(ADReposStarStatus)starStatus {

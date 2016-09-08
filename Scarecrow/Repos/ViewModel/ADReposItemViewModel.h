@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "ADReposViewModel.h"
 
 @interface ADReposItemViewModel : NSObject
 
@@ -19,6 +20,6 @@
 
 @property (assign, nonatomic, readonly) CGFloat height;
 
-- (instancetype)initWithRepos:(OCTRepository *)repos;
+- (instancetype)initWithRepos:(OCTRepository *)repos options:(ADReposOption)options;;
 
 @end

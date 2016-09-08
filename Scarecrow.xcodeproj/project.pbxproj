@@ -24,6 +24,9 @@
 		1172FE8D1D8064A9007181BB /* ADReposTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1172FE8B1D8064A9007181BB /* ADReposTableViewCell.xib */; };
 		118AE38B1D450EFF006DD475 /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 118AE38A1D450EFF006DD475 /* Profile.storyboard */; };
 		118AE38F1D450FBF006DD475 /* Discover.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 118AE38E1D450FBF006DD475 /* Discover.storyboard */; };
+		11BD851E1D81C09800698803 /* ADPublicReposViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 11BD851D1D81C09800698803 /* ADPublicReposViewModel.m */; };
+		11BD85331D81C8C200698803 /* ADPublicReposViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 11BD85311D81C8C200698803 /* ADPublicReposViewController.m */; };
+		11BD85341D81C8C200698803 /* ADPublicReposViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 11BD85321D81C8C200698803 /* ADPublicReposViewController.xib */; };
 		11EC821F1D6C9C73003ECCD2 /* ADFollowersViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 11EC821D1D6C9C73003ECCD2 /* ADFollowersViewController.m */; };
 		11EC82201D6C9C73003ECCD2 /* ADFollowersViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 11EC821E1D6C9C73003ECCD2 /* ADFollowersViewController.xib */; };
 		11EC82431D6F45B5003ECCD2 /* FMDatabaseQueueV2.m in Sources */ = {isa = PBXBuildFile; fileRef = 11EC82421D6F45B5003ECCD2 /* FMDatabaseQueueV2.m */; };
@@ -348,6 +351,11 @@
 		1172FE8B1D8064A9007181BB /* ADReposTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ADReposTableViewCell.xib; sourceTree = "<group>"; };
 		118AE38A1D450EFF006DD475 /* Profile.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Profile.storyboard; path = Profile/View/Profile.storyboard; sourceTree = "<group>"; };
 		118AE38E1D450FBF006DD475 /* Discover.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Discover.storyboard; path = Discover/View/Discover.storyboard; sourceTree = "<group>"; };
+		11BD851C1D81C09800698803 /* ADPublicReposViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ADPublicReposViewModel.h; sourceTree = "<group>"; };
+		11BD851D1D81C09800698803 /* ADPublicReposViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ADPublicReposViewModel.m; sourceTree = "<group>"; };
+		11BD85301D81C8C200698803 /* ADPublicReposViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ADPublicReposViewController.h; sourceTree = "<group>"; };
+		11BD85311D81C8C200698803 /* ADPublicReposViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ADPublicReposViewController.m; sourceTree = "<group>"; };
+		11BD85321D81C8C200698803 /* ADPublicReposViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ADPublicReposViewController.xib; sourceTree = "<group>"; };
 		11EC821C1D6C9C73003ECCD2 /* ADFollowersViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ADFollowersViewController.h; sourceTree = "<group>"; };
 		11EC821D1D6C9C73003ECCD2 /* ADFollowersViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ADFollowersViewController.m; sourceTree = "<group>"; };
 		11EC821E1D6C9C73003ECCD2 /* ADFollowersViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ADFollowersViewController.xib; sourceTree = "<group>"; };
@@ -576,6 +584,9 @@
 				1172FE891D8064A9007181BB /* ADReposTableViewCell.h */,
 				1172FE8A1D8064A9007181BB /* ADReposTableViewCell.m */,
 				1172FE8B1D8064A9007181BB /* ADReposTableViewCell.xib */,
+				11BD85301D81C8C200698803 /* ADPublicReposViewController.h */,
+				11BD85311D81C8C200698803 /* ADPublicReposViewController.m */,
+				11BD85321D81C8C200698803 /* ADPublicReposViewController.xib */,
 			);
 			name = View;
 			path = Repos/View;
@@ -588,6 +599,8 @@
 				116FA5EE1D74950D00F0AEE7 /* ADReposViewModel.m */,
 				1172FE7B1D805C8E007181BB /* ADReposItemViewModel.h */,
 				1172FE7C1D805C8E007181BB /* ADReposItemViewModel.m */,
+				11BD851C1D81C09800698803 /* ADPublicReposViewModel.h */,
+				11BD851D1D81C09800698803 /* ADPublicReposViewModel.m */,
 			);
 			name = ViewModel;
 			path = Repos/ViewModel;
@@ -1278,6 +1291,7 @@
 				242331361D2E36BD00EF8698 /* Assets.xcassets in Resources */,
 				242331341D2E36BD00EF8698 /* Main.storyboard in Resources */,
 				115619161D43D5DB00ABA15F /* Subscribe.storyboard in Resources */,
+				11BD85341D81C8C200698803 /* ADPublicReposViewController.xib in Resources */,
 				246E9E071D637BC700ED9EC4 /* ADWebViewController.xib in Resources */,
 				116FA5EF1D74950D00F0AEE7 /* Repos.storyboard in Resources */,
 				118AE38F1D450FBF006DD475 /* Discover.storyboard in Resources */,
@@ -1461,6 +1475,7 @@
 				248569D61D5E21820087E62D /* OCTRef+Scarecrow.m in Sources */,
 				2423312B1D2E36BD00EF8698 /* main.m in Sources */,
 				2459AAA91D538ADC00FCD90F /* ADSubscribeTableViewCell.m in Sources */,
+				11BD85331D81C8C200698803 /* ADPublicReposViewController.m in Sources */,
 				248EC6061D66145200860852 /* ADSetttingsViewModel.m in Sources */,
 				248569DA1D5E21820087E62D /* UIStoryboard+ViewModel.m in Sources */,
 				248569D91D5E21820087E62D /* UIColor+Scarecrow.m in Sources */,
@@ -1480,6 +1495,7 @@
 				2479B6D01D6C3B000035C629 /* ADFollowingViewModel.m in Sources */,
 				248569DF1D5E21820087E62D /* ADViewModel.m in Sources */,
 				11042D831D2EADC700EECC07 /* ADLoginViewModel.m in Sources */,
+				11BD851E1D81C09800698803 /* ADPublicReposViewModel.m in Sources */,
 				2479B6CB1D6C3B000035C629 /* ADUserListItemTableViewCell.m in Sources */,
 				248569E71D5E22110087E62D /* ADOauthViewModel.m in Sources */,
 				248569D21D5E21820087E62D /* NSMutableAttributedString+Scarecrow.m in Sources */,

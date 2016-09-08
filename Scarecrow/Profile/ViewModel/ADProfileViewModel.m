@@ -12,7 +12,7 @@
 #import "ADSetttingsViewModel.h"
 #import "ADFollowersViewModel.h"
 #import "ADFollowingViewModel.h"
-#import "ADReposViewModel.h"
+#import "ADPublicReposViewModel.h"
 
 NSString* const kDefaultPlaceHolder = @"Not Set";
 
@@ -87,7 +87,7 @@ NSString* const kDefaultPlaceHolder = @"Not Set";
     
     self.avatarHeaderViewModel.reposCommand = [[RACCommand alloc]initWithSignalBlock:^RACSignal *(id input) {
         @strongify(self);
-        ADReposViewModel *viewModel = [[ADReposViewModel alloc]initWithParam:@{@"user" : self.user}];
+        ADPublicReposViewModel *viewModel = [[ADPublicReposViewModel alloc]initWithParam:@{@"user" : self.user}];
         
         ADViewController *vc = [[ADPlatformManager sharedInstance]viewControllerWithViewModel:viewModel];
         [self.ownerVC.navigationController pushViewController:vc animated:YES];

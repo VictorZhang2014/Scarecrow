@@ -52,7 +52,9 @@
     RACSignal *fetchRemoteDataSignal = [self.fetchRemoteDataCommamd.executionSignals.switchToLatest doNext:^(NSArray *reposArray) {
         @strongify(self);
         dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
-            [self updateRepos:reposArray];
+            if (self.options & ADReposOptionUpdate) {
+                [self updateRepos:reposArray];
+            }
        });
     }];
     
@@ -81,10 +83,18 @@
 
 - (RACSignal *)dataSourceSignalWithRopse:(NSArray *)reposArray {
     NSArray *viewModelArray = [[reposArray rac_sequence]map:^id(OCTRepository *repos) {
-        return [[ADReposItemViewModel alloc]initWithRepos:repos];
+        return [[ADReposItemViewModel alloc]initWithRepos:repos options:self.options];
     }].array;
     
     return [RACSignal return:@[viewModelArray]];
+}
+
+- (ADReposOption)options {
+    ADReposOption options = 0;
+    
+    options |= ADReposOptionUpdate;
+    
+    return 0;
 }
 
 @end
